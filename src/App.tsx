@@ -16,7 +16,7 @@ function App() {
     const message = data.get('message') || ''
     const subject = encodeURIComponent(`Mensaje desde mi portfolio — ${name}`)
     const body = encodeURIComponent(`Nombre: ${name}\nEmail: ${email}\n\n${message}`)
-    window.location.href = `mailto:tuemail@ejemplo.com?subject=${subject}&body=${body}`
+    window.location.href = `mailto:rubenesposito17@gmail.com?subject=${subject}&body=${body}`
     setSent(true)
   }
 
@@ -91,7 +91,7 @@ function App() {
       </section>
 
       <section className="contact shell" id="contacto">
-        <div className="contact-copy"><p className="eyebrow">04 · CONTACTO</p><h2>¿Charlamos?</h2><p>Si te interesa este camino, querés compartir una experiencia o tenés un proyecto para conversar, escribime.</p><a href="mailto:tuemail@ejemplo.com" className="email-link">tuemail@ejemplo.com <span>↗</span></a><small>Reemplazá este correo por el tuyo antes de publicar.</small></div>
+        <div className="contact-copy"><p className="eyebrow">04 · CONTACTO</p><h2>¿Charlamos?</h2><p>Si te interesa este camino, querés compartir una experiencia o tenés un proyecto para conversar, escribime.</p><a href="mailto:rubenesposito17@gmail.com" className="email-link">rubenesposito17@gmail.com <span>↗</span></a></div>
         <form onSubmit={handleSubmit}>
           <label>Nombre<input required name="name" placeholder="¿Cómo te llamás?" /></label>
           <label>Email<input required name="email" type="email" placeholder="tu@email.com" /></label>

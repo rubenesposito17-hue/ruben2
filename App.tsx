@@ -33,7 +33,7 @@ function App() {
           <a href="#camino" onClick={() => setMenuOpen(false)}>Mi camino</a>
           <a href="#canal" onClick={() => setMenuOpen(false)}>El canal</a>
           <a href="#contacto" onClick={() => setMenuOpen(false)}>Contacto</a>
-        </nav>
+        </nav> rubenesposito17-huerubenesposito17-huerubenesposito17-hue
       </header>
 
       <section className="hero shell" id="inicio">
@@ -94,7 +94,7 @@ function App() {
         <div className="contact-copy"><p className="eyebrow">04 · CONTACTO</p><h2>¿Charlamos?</h2><p>Si te interesa este camino, querés compartir una experiencia o tenés un proyecto para conversar, escribime.</p><a href="mailto:tuemail@ejemplo.com" className="email-link">tuemail@ejemplo.com <span>↗</span></a><small>Reemplazá este correo por el tuyo antes de publicar.</small></div>
         <form onSubmit={handleSubmit}>
           <label>Nombre<input required name="name" placeholder="¿Cómo te llamás?" /></label>
-          <label>Email<input required name="email" type="email" placeholder="tu@email.com" /></label>
+          <label>Email<input required name="email" type="email" placeholder="rubenesposito17" /></label>
           <label>Mensaje<textarea required name="message" placeholder="Contame en qué puedo ayudarte..." rows={4} /></label>
           <button className="button button-primary" type="submit">Enviar mensaje <span>→</span></button>
           {sent && <p className="form-note">Se abrió tu aplicación de correo para enviar el mensaje.</p>}
