@@ -53,6 +53,12 @@ type TranslationSet = {
     visualTitle: string
     visualSmall: string
   }
+  tools: {
+    eyebrow: string
+    title: string
+    intro: string
+    items: Array<{ name: string; description: string; downloadLabel: string; url: string; icon: 'react' | 'vscode' | 'sublime' | 'python' }>
+  }
   contact: {
     eyebrow: string
     heading: string
@@ -121,6 +127,17 @@ const translations: Record<Language, TranslationSet> = {
       visualTitle: 'APRENDER',
       visualSmall: 'nunca es tarde para empezar',
     },
+    tools: {
+      eyebrow: 'HERRAMIENTAS',
+      title: 'Las herramientas que acompañan mi camino.',
+      intro: 'Podés descargarlas desde los enlaces oficiales si querés probarlas también.',
+      items: [
+        { name: 'React', description: 'Biblioteca para construir interfaces modernas.', downloadLabel: 'Descargar React', url: 'https://react.dev/learn/installation', icon: 'react' },
+        { name: 'Visual Studio Code', description: 'Editor ligero y potente para programar.', downloadLabel: 'Descargar VS Code', url: 'https://code.visualstudio.com/download', icon: 'vscode' },
+        { name: 'Sublime Text', description: 'Editor rápido y minimalista para escribir código.', downloadLabel: 'Descargar Sublime', url: 'https://www.sublimetext.com/download', icon: 'sublime' },
+        { name: 'Python', description: 'Lenguaje ideal para aprender y automatizar tareas.', downloadLabel: 'Descargar Python', url: 'https://www.python.org/downloads/', icon: 'python' },
+      ],
+    },
     contact: {
       eyebrow: '04 · CONTACTO',
       heading: '¿Charlamos?',
@@ -187,6 +204,17 @@ const translations: Record<Language, TranslationSet> = {
       visualTitle: 'LEARN',
       visualSmall: 'it is never too late to start',
     },
+    tools: {
+      eyebrow: 'TOOLS',
+      title: 'The tools that accompany my journey.',
+      intro: 'You can download them from the official links if you want to try them too.',
+      items: [
+        { name: 'React', description: 'Library for building modern interfaces.', downloadLabel: 'Download React', url: 'https://react.dev/learn/installation', icon: 'react' },
+        { name: 'Visual Studio Code', description: 'A lightweight and powerful editor for coding.', downloadLabel: 'Download VS Code', url: 'https://code.visualstudio.com/download', icon: 'vscode' },
+        { name: 'Sublime Text', description: 'A fast and minimalist editor for writing code.', downloadLabel: 'Download Sublime', url: 'https://www.sublimetext.com/download', icon: 'sublime' },
+        { name: 'Python', description: 'A great language for learning and automating tasks.', downloadLabel: 'Download Python', url: 'https://www.python.org/downloads/', icon: 'python' },
+      ],
+    },
     contact: {
       eyebrow: '04 · CONTACT',
       heading: 'Shall we talk?',
@@ -199,6 +227,41 @@ const translations: Record<Language, TranslationSet> = {
     },
     footer: { text: 'Learning, creating, moving forward.', linkLabel: 'YouTube' },
   },
+}
+
+function ToolIcon({ name }: { name: 'react' | 'vscode' | 'sublime' | 'python' }) {
+  switch (name) {
+    case 'react':
+      return (
+        <svg viewBox="0 0 256 228" aria-hidden="true">
+          <circle cx="128" cy="114" r="100" fill="#61dafb" />
+          <ellipse cx="128" cy="114" rx="70" ry="28" fill="#fff" opacity="0.95" />
+          <path d="M128 40c-30 0-56 12-76 32 16 14 37 24 62 24 24 0 46-10 62-24-20-20-46-32-48-32Z" fill="#20232a" opacity="0.85" />
+          <path d="M128 188c30 0 56-12 76-32-16-14-37-24-62-24-24 0-46 10-62 24 20 20 46 32 48 32Z" fill="#20232a" opacity="0.85" />
+        </svg>
+      )
+    case 'vscode':
+      return (
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <rect x="3" y="3" width="18" height="18" rx="4" fill="#007ACC" />
+          <path d="M15.5 5 8.3 11.4 5.2 9 4 9.8l3.3 2.7L4 15.2l1.2.8 3.1-2.4 7.2 6.4 3.5-1.6V6.6L15.5 5Zm0 3.4v7.2l-3.7-3.6 3.7-3.6Z" fill="#fff" />
+        </svg>
+      )
+    case 'sublime':
+      return (
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <rect x="3" y="3" width="18" height="18" rx="4" fill="#FF9800" />
+          <path d="M6 8.2 16.4 5l2.1 1v1.7L8.7 10.2l2.9 1.6v1.2L6 13.6V8.2Zm3.1 6.2 2.7 1.4v1.3L9.1 17l-2.2-1.2v-1.1l2.2-.4Z" fill="#fff" />
+        </svg>
+      )
+    case 'python':
+      return (
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <rect x="3" y="3" width="18" height="18" rx="4" fill="#3776AB" />
+          <path d="M10.2 6.2c-.9 0-1.6.8-1.6 1.8v1.4h2.8v.6H8.6c-1.4 0-2.6 1.1-2.6 2.5v2.8c0 1.4 1.2 2.5 2.6 2.5h1.7v-2.4H8.6c-.5 0-.8-.4-.8-.9v-2.8c0-.5.3-.9.8-.9h1.6v-1.7c0-.6.4-1.1 1-1.1h3.5c.5 0 .9.4.9.9v1.4h2.2V8c0-1-.8-1.8-1.8-1.8h-4.2Zm4.2 4.4c.6 0 1 .4 1 1v2.8c0 .6-.4 1-1 1h-1.5v2.4h1.7c1.4 0 2.6-1.1 2.6-2.5v-2.8c0-1.4-1.2-2.5-2.6-2.5H13v1.6h1.4Z" fill="#fff" />
+        </svg>
+      )
+  }
 }
 
 function App() {
@@ -292,6 +355,24 @@ function App() {
               <h3>{card.title}</h3>
               <p>{card.description}</p>
             </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="tools shell" aria-label="Herramientas y descargas">
+        <div className="showcase-intro">
+          <p className="eyebrow">{t.tools.eyebrow}</p>
+          <h2>{t.tools.title}</h2>
+          <p>{t.tools.intro}</p>
+        </div>
+        <div className="tool-grid">
+          {t.tools.items.map((tool) => (
+            <a key={tool.name} className="tool-card" href={tool.url} target="_blank" rel="noreferrer">
+              <div className="tool-logo"><ToolIcon name={tool.icon} /></div>
+              <h3>{tool.name}</h3>
+              <p>{tool.description}</p>
+              <span>{tool.downloadLabel} ↗</span>
+            </a>
           ))}
         </div>
       </section>
