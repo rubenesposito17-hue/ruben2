@@ -3,6 +3,7 @@ import type { FormEvent } from 'react'
 import './App.css'
 
 const youtubeUrl = 'https://www.youtube.com/@holamundoarg'
+const contactEmail = 'rubenesposito17@gmail.com'
 
 type Language = 'es' | 'en'
 
@@ -124,7 +125,7 @@ const translations: Record<Language, TranslationSet> = {
       eyebrow: '04 · CONTACTO',
       heading: '¿Charlamos?',
       description: 'Si te interesa este camino, querés compartir una experiencia o tenés un proyecto para conversar, escribime.',
-      emailHint: 'Este es el correo de contacto activo.',
+      emailHint: 'Tu mensaje se abrirá en tu gestor de correo.',
       labels: { name: 'Nombre', email: 'Email', message: 'Mensaje' },
       placeholders: { name: '¿Cómo te llamás?', email: 'tu@email.com', message: 'Contame en qué puedo ayudarte...' },
       button: 'Enviar mensaje',
@@ -190,7 +191,7 @@ const translations: Record<Language, TranslationSet> = {
       eyebrow: '04 · CONTACT',
       heading: 'Shall we talk?',
       description: 'If you are interested in this path, want to share an experience or have a project to talk about, write to me.',
-      emailHint: 'This is the active contact email.',
+      emailHint: 'Your message will open in your mail app.',
       labels: { name: 'Name', email: 'Email', message: 'Message' },
       placeholders: { name: 'What is your name?', email: 'you@email.com', message: 'Tell me how I can help you...' },
       button: 'Send message',
@@ -220,7 +221,7 @@ function App() {
         ? `Nombre: ${name}\nEmail: ${email}\n\n${message}`
         : `Name: ${name}\nEmail: ${email}\n\n${message}`,
     )
-    window.location.href = `mailto:rubenesposito17@gmail.com?subject=${subject}&body=${body}`
+    window.location.href = `mailto:${contactEmail}?subject=${subject}&body=${body}`
     setSent(true)
   }
 
@@ -256,7 +257,7 @@ function App() {
           <p className="intro">{t.hero.intro}</p>
           <div className="hero-actions">
             <a className="button button-primary" href={youtubeUrl} target="_blank" rel="noreferrer">{t.hero.primaryCta} <span>↗</span></a>
-            <a className="button button-secondary" href="mailto:rubenesposito17@gmail.com">{t.hero.secondaryCta} <span>→</span></a>
+            <a className="button button-secondary" href="#contacto">{t.hero.secondaryCta} <span>→</span></a>
           </div>
           <div className="hero-highlights">
             {t.hero.highlights.map((item) => (
@@ -343,7 +344,7 @@ function App() {
       </section>
 
       <section className="contact shell" id="contacto">
-        <div className="contact-copy"><p className="eyebrow">{t.contact.eyebrow}</p><h2>{t.contact.heading}</h2><p>{t.contact.description}</p><a href="mailto:rubenesposito17@gmail.com" className="email-link">rubenesposito17@gmail.com <span>↗</span></a><small>{t.contact.emailHint}</small></div>
+        <div className="contact-copy"><p className="eyebrow">{t.contact.eyebrow}</p><h2>{t.contact.heading}</h2><p>{t.contact.description}</p><small>{t.contact.emailHint}</small></div>
         <form onSubmit={handleSubmit}>
           <label>{t.contact.labels.name}<input required name="name" placeholder={t.contact.placeholders.name} /></label>
           <label>{t.contact.labels.email}<input required name="email" type="email" placeholder={t.contact.placeholders.email} /></label>
@@ -353,7 +354,7 @@ function App() {
         </form>
       </section>
 
-      <a className="floating-cta" href="mailto:rubenesposito17@gmail.com">{t.hero.floatingCta}</a>
+      <a className="floating-cta" href="#contacto">{t.hero.floatingCta}</a>
       <footer className="footer shell"><a className="brand" href="#inicio"><span className="brand-mark">&lt;/&gt;</span> rubencito<span className="brand-dot">.</span></a><p>{t.footer.text}</p><a href={youtubeUrl} target="_blank" rel="noreferrer">{t.footer.linkLabel} ↗</a><span>© {new Date().getFullYear()}</span></footer>
     </main>
   )
