@@ -57,7 +57,7 @@ type TranslationSet = {
     eyebrow: string
     title: string
     intro: string
-    items: Array<{ name: string; description: string; downloadLabel: string; url: string; icon: 'react' | 'vscode' | 'sublime' | 'python' }>
+    items: Array<{ name: string; description: string; downloadLabel: string; url: string; icon: 'react' | 'vscode' | 'sublime' | 'python' | 'node' | 'git' | 'github' | 'vercel' }>
   }
   contact: {
     eyebrow: string
@@ -136,6 +136,10 @@ const translations: Record<Language, TranslationSet> = {
         { name: 'Visual Studio Code', description: 'Editor ligero y potente para programar.', downloadLabel: 'Descargar VS Code', url: 'https://code.visualstudio.com/download', icon: 'vscode' },
         { name: 'Sublime Text', description: 'Editor rápido y minimalista para escribir código.', downloadLabel: 'Descargar Sublime', url: 'https://www.sublimetext.com/download', icon: 'sublime' },
         { name: 'Python', description: 'Lenguaje ideal para aprender y automatizar tareas.', downloadLabel: 'Descargar Python', url: 'https://www.python.org/downloads/', icon: 'python' },
+        { name: 'Node.js', description: 'Entorno para ejecutar JavaScript fuera del navegador.', downloadLabel: 'Descargar Node.js', url: 'https://nodejs.org/', icon: 'node' },
+        { name: 'Git', description: 'Sistema de control de versiones para tus proyectos.', downloadLabel: 'Descargar Git', url: 'https://git-scm.com/downloads', icon: 'git' },
+        { name: 'GitHub', description: 'Plataforma para alojar repositorios y colaborar.', downloadLabel: 'Registrarse en GitHub', url: 'https://github.com/signup', icon: 'github' },
+        { name: 'Vercel', description: 'Plataforma para desplegar proyectos web fácilmente.', downloadLabel: 'Registrarse en Vercel', url: 'https://vercel.com/signup', icon: 'vercel' },
       ],
     },
     contact: {
@@ -213,6 +217,10 @@ const translations: Record<Language, TranslationSet> = {
         { name: 'Visual Studio Code', description: 'A lightweight and powerful editor for coding.', downloadLabel: 'Download VS Code', url: 'https://code.visualstudio.com/download', icon: 'vscode' },
         { name: 'Sublime Text', description: 'A fast and minimalist editor for writing code.', downloadLabel: 'Download Sublime', url: 'https://www.sublimetext.com/download', icon: 'sublime' },
         { name: 'Python', description: 'A great language for learning and automating tasks.', downloadLabel: 'Download Python', url: 'https://www.python.org/downloads/', icon: 'python' },
+        { name: 'Node.js', description: 'Runtime for running JavaScript outside the browser.', downloadLabel: 'Download Node.js', url: 'https://nodejs.org/', icon: 'node' },
+        { name: 'Git', description: 'Version control system for your projects.', downloadLabel: 'Download Git', url: 'https://git-scm.com/downloads', icon: 'git' },
+        { name: 'GitHub', description: 'Platform to host repositories and collaborate.', downloadLabel: 'Sign up for GitHub', url: 'https://github.com/signup', icon: 'github' },
+        { name: 'Vercel', description: 'Platform for deploying web projects easily.', downloadLabel: 'Sign up for Vercel', url: 'https://vercel.com/signup', icon: 'vercel' },
       ],
     },
     contact: {
@@ -229,7 +237,7 @@ const translations: Record<Language, TranslationSet> = {
   },
 }
 
-function ToolIcon({ name }: { name: 'react' | 'vscode' | 'sublime' | 'python' }) {
+function ToolIcon({ name }: { name: 'react' | 'vscode' | 'sublime' | 'python' | 'node' | 'git' | 'github' | 'vercel' }) {
   switch (name) {
     case 'react':
       return (
@@ -259,6 +267,34 @@ function ToolIcon({ name }: { name: 'react' | 'vscode' | 'sublime' | 'python' })
         <svg viewBox="0 0 24 24" aria-hidden="true">
           <rect x="3" y="3" width="18" height="18" rx="4" fill="#3776AB" />
           <path d="M10.2 6.2c-.9 0-1.6.8-1.6 1.8v1.4h2.8v.6H8.6c-1.4 0-2.6 1.1-2.6 2.5v2.8c0 1.4 1.2 2.5 2.6 2.5h1.7v-2.4H8.6c-.5 0-.8-.4-.8-.9v-2.8c0-.5.3-.9.8-.9h1.6v-1.7c0-.6.4-1.1 1-1.1h3.5c.5 0 .9.4.9.9v1.4h2.2V8c0-1-.8-1.8-1.8-1.8h-4.2Zm4.2 4.4c.6 0 1 .4 1 1v2.8c0 .6-.4 1-1 1h-1.5v2.4h1.7c1.4 0 2.6-1.1 2.6-2.5v-2.8c0-1.4-1.2-2.5-2.6-2.5H13v1.6h1.4Z" fill="#fff" />
+        </svg>
+      )
+    case 'node':
+      return (
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <rect x="3" y="3" width="18" height="18" rx="4" fill="#339933" />
+          <path d="M12 5 6.5 8v8L12 19l5.5-3V8L12 5Zm0 2.2 3.8 2.1v5.4L12 16.8l-3.8-2.1V9.3L12 7.2Zm-1.3 2.2v3.2l1.3 1 1.3-1V9.4h-2.6Zm0 0" fill="#fff" />
+        </svg>
+      )
+    case 'git':
+      return (
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <rect x="3" y="3" width="18" height="18" rx="4" fill="#F1502F" />
+          <path d="M12 5.4 8.5 8.9l1.8 1.8 1.7-1.7 1.7 1.7 1.8-1.8L12 5.4Zm-2.3 3.3v4.6l2.3 2.3 2.3-2.3V8.7L12 6.4l-2.3 2.3Zm2.3 2.3 1.1 1.1-1.1 1.1-1.1-1.1 1.1-1.1Z" fill="#fff" />
+        </svg>
+      )
+    case 'github':
+      return (
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <rect x="3" y="3" width="18" height="18" rx="4" fill="#24292F" />
+          <path d="M12 5c-3.9 0-7 3.1-7 7 0 3.1 2 5.7 4.8 6.6.3.1.5-.1.5-.3v-1.2c-1.9.4-2.3-.9-2.3-.9-.3-.8-.8-1-.8-1-.7-.4.1-.4.1-.4.8.1 1.2.8 1.2.8.7 1.2 1.9.9 2.3.7.1-.5.3-.9.5-1.1-1.6-.2-3.3-.8-3.3-3.6 0-.8.3-1.5.8-2-.1-.2-.3-.9.1-1.9 0 0 .7-.2 2.2.8.6-.2 1.3-.3 2-.3s1.4.1 2 .3c1.5-1 2.2-.8 2.2-.8.4 1 .2 1.7.1 1.9.5.5.8 1.2.8 2 0 2.8-1.7 3.4-3.3 3.6.3.2.5.7.5 1.4v2.1c0 .2.2.4.5.3A7.01 7.01 0 0 0 19 12c0-3.9-3.1-7-7-7Z" fill="#fff" />
+        </svg>
+      )
+    case 'vercel':
+      return (
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <rect x="3" y="3" width="18" height="18" rx="4" fill="#000000" />
+          <path d="m12 6 6.8 12H5.2L12 6Z" fill="#fff" />
         </svg>
       )
   }
@@ -308,6 +344,7 @@ function App() {
           <nav className={menuOpen ? 'nav-links nav-links-open' : 'nav-links'}>
             <a href="#camino" onClick={() => setMenuOpen(false)}>{t.nav.camino}</a>
             <a href="#canal" onClick={() => setMenuOpen(false)}>{t.nav.canal}</a>
+            <a href="#herramientas" onClick={() => setMenuOpen(false)}>Programas</a>
             <a href="#contacto" onClick={() => setMenuOpen(false)}>{t.nav.contacto}</a>
           </nav>
         </div>
@@ -359,7 +396,7 @@ function App() {
         </div>
       </section>
 
-      <section className="tools shell" aria-label="Herramientas y descargas">
+      <section className="tools shell" id="herramientas" aria-label="Herramientas y descargas">
         <div className="showcase-intro">
           <p className="eyebrow">{t.tools.eyebrow}</p>
           <h2>{t.tools.title}</h2>
